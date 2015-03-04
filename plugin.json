@@ -1,0 +1,25 @@
+{
+	"id": "nodebb-plugin-mega-colors",
+	"name": "NodeBB Text Colors Plugin",
+	"description": "NodeBB Plugin that allows users to use colors in their posts.",
+	"url": "https://Megga@bitbucket.org/Megga/nodebb-plugin-mega-colors",
+	"nbbpm": {
+		"compatibility": "^0.6.0"
+	},
+	"library": "./library.js",
+	"staticDirs": {
+		"images": "lib/colorpicker/images"
+	},
+	"hooks": [
+		{ "hook": "filter:parse.post", "method": "parse" },
+		{ "hook": "filter:parse.signature", "method": "parse" },
+		{ "hook": "filter:parse.raw", "method": "parse" }
+	],
+	"less": [
+		"lib/colorpicker/css/colorpicker.less"
+	],
+	"scripts": [
+		"./button.js",
+		"lib/colorpicker/js/colorpicker.js"
+	]
+}

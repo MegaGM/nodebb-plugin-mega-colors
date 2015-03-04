@@ -1,0 +1,19 @@
+{
+	"name": "nodebb-plugin-mega-colors",
+	"version": "0.10.11",
+	"description": "NodeBB Plugin that allows users to use colors in their posts.",
+	"main": "library.js",
+	"repository": {
+		"type": "git",
+		"url": "https://Megga@bitbucket.org/Megga/nodebb-plugin-mega-colors"
+	},
+	"keywords": [
+		"nodebb",
+		"colors"
+	],
+	"license": "MIT",
+	"dependencies": {},
+	"homepage": "https://bitbucket.org/Megga/nodebb-plugin-mega-colors",
+	"maintainers": [{"name": "Mega", "email": "daxaka.msk@gmail.com"}],
+	"directories": {}
+}
