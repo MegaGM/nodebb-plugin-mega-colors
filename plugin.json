@@ -4,7 +4,7 @@
 	"description": "NodeBB Plugin that allows users to use colors in their posts.",
 	"url": "https://Megga@bitbucket.org/Megga/nodebb-plugin-mega-colors",
 	"nbbpm": {
-		"compatibility": "^0.6.0"
+		"compatibility": "^0.8.0"
 	},
 	"library": "./library.js",
 	"staticDirs": {
