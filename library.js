@@ -44,7 +44,7 @@ function parser (data) {
 		return '<span style="color: ' + $1 + ';">' + $2 + '</span>';
 	});
 
-	data = data.replace(/___CODE___/, function (match) {
+	data = data.replace(/___CODE___/g, function (match) {
 		return codeTags.shift();
 	});
 
