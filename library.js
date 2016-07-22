@@ -26,7 +26,9 @@ function parser (data) {
 	var codeTags = [];
 
 	function chooseColor ($1) {
+		$1 = $1.toLowerCase();
 		if ('лидер' === $1) return '#cf0000';
+		if ('генерал' === $1) return '#f7632b';
 		if ('офицер' === $1) return '#cf6800';
 		if ('рекрутер' === $1) return '#008000';
 		if ('рыцарь' === $1) return '#0090ff';
