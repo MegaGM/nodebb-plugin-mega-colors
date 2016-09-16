@@ -1,7 +1,7 @@
 (function (module) {
 'use strict';
 var Plugin = {},
-codeRegex = /(?:<pre>.*?<\/pre>|<code>.*?<\/code>)/gi,
+codeRegex = /(?:<pre>(?:.|\n)*?<\/pre>|<code>(?:.|\n)*?<\/code>)/gi,
 colorRegex = /%\((#(?:[A-Fa-f0-9]{3}(?:[A-Fa-f0-9]{3})?)|(?:rgb\(\d{1,3},\d{1,3},\d{1,3}\))|(?:[a-zа-я]){3,})\)\[(.+?)\]/gi;
 
 Plugin.parse = function (data, callback) {
@@ -39,7 +39,7 @@ function parser (data) {
 		return '<span style="color: ' + $1 + ';">' + $2 + '</span>';
 	});
 
-	data = data.replace(/___CODE___/g, function (match) {
+	data = data.replace(/___CODE___/gi, function (match) {
 		return codeTags.shift();
 	});
 
