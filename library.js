@@ -1,22 +1,15 @@
 (function (module) {
 'use strict';
 var Plugin = {},
-codeRegex = /(?:<pre>.*?<\/pre>|<code>.*?<\/code>)/g,
-colorRegex = /%\((#(?:[A-Fa-f0-9]{3}(?:[A-Fa-f0-9]{3})?)|(?:rgb\(\d{1,3},\d{1,3},\d{1,3}\))|(?:[a-zа-я]){3,})\)\[(.+?)\]/g;
+codeRegex = /(?:<pre>.*?<\/pre>|<code>.*?<\/code>)/gi,
+colorRegex = /%\((#(?:[A-Fa-f0-9]{3}(?:[A-Fa-f0-9]{3})?)|(?:rgb\(\d{1,3},\d{1,3},\d{1,3}\))|(?:[a-zа-я]){3,})\)\[(.+?)\]/gi;
 
 Plugin.parse = function (data, callback) {
-	// console.log('colors-plugin', data);
 	if (data && 'string' === typeof data) {
-		// filter:parse.raw
-		// console.log('filter:parse.raw');
 		data = parser(data);
 	} else if (data.postData && data.postData.content && data.postData.content.match(colorRegex)) {
-		// filter:parse.post
-		// console.log('filter:parse.post');
 		data.postData.content = parser(data.postData.content);
 	} else if (data.userData && data.userData.signature && data.userData.signature.match(colorRegex)) {
-		// filter:parse.signature
-		// console.log('filter:parse.signature');
 		data.userData.signature = parser(data.userData.signature);
 	}
 	callback(null, data);
